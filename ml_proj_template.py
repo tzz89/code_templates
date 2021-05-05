@@ -57,6 +57,19 @@ setup(
     install_requires=[] 
 )
     '''
+    yaml_template = '''# stages:
+#   stage1Name:
+#     cmd: python pythonFilePath --arg1 arg1 --arg2 arg2
+#     deps:
+#     - src/pythonFilePath
+#     - data/data.xml
+#     params:
+#     -param1.param1NameYaml
+#     -param2.param2NameYaml
+#     outs:
+#     -data/prepared
+    '''
+
     manifiest_doc = "include *.md *.txt LICENSE"
 
     for folder in misc_folders:
@@ -85,3 +98,6 @@ setup(
 
     with open('setup.py', 'w') as f:
         f.write(setup_template)
+
+    with open(os.path.join("configs", "dvc.yaml"), 'w') as f:
+        f.write(yaml_template)
