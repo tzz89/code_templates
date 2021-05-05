@@ -35,26 +35,17 @@ if __name__ == '__main__':
         os.path.join('configs', 'dvc.yaml')
 
     ]
+# ****Do not leave any spaces in git_ignore or it might cause some problems with DVC
 
-    git_ignores = '''
-# Distribution / packaging
-env/
-build/
-lib/
-lib64/
-
+    git_ignores = '''# Jupyter NB Checkpoints
+.ipynb_checkpoints/
+# DotEnv configuration
+.env
 # Pycharm
 .idea
+'''
 
-# VS Code
-.vscode/
-
-# Jupyter NB Checkpoints
-.ipynb_checkpoints/
-    '''
-
-    setup_template = f'''
-from setuptools import find_packages, setup
+    setup_template = f'''from setuptools import find_packages, setup
 
 setup(
     name='src',
