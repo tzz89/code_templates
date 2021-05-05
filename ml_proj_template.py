@@ -54,7 +54,7 @@ setup(
     description='{project_description}',
     author='{author}',
     license='{license}',
-    install_requires=[] 
+    install_requires=[]
 )
     '''
     yaml_template = '''# stages:
@@ -72,6 +72,23 @@ setup(
 
     manifiest_doc = "include *.md *.txt LICENSE"
 
+    tox_template = '''[tox]
+envlist = py37
+
+[testenv]
+deps = -rrequirements.txt
+commands =
+    pytest -v
+'''
+
+    requirements_template = ''' #local package
+-e .
+
+# third party packages
+pytest
+tox
+'''
+
     for folder in misc_folders:
         os.makedirs(folder, exist_ok=True)
 
@@ -81,10 +98,12 @@ setup(
 
     for folder in src_folders:
         os.makedirs(folder, exist_ok=True)
-        # with open(os.path.join(folder, '.gitkeep'), 'w') as f:
-        #     pass
-        with open(os.path.join(folder, '__init__.py'), 'w') as f:
-            pass
+        if folder == 'src':
+            with open(os.path.join(folder, '__init__.py'), 'w') as f:
+                pass
+        else:
+            with open(os.path.join(folder, '.gitkeep'), 'w') as f:
+                pass
 
     for file in files:
         with open(file, 'w') as f:
@@ -101,3 +120,9 @@ setup(
 
     with open(os.path.join("configs", "dvc.yaml"), 'w') as f:
         f.write(yaml_template)
+
+    with open("tox.ini", "w") as f:
+        f.write(tox_template)
+
+    with open("requirements.txt", "w") as f:
+        f.write(requirements_template)
