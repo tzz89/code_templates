@@ -1,0 +1,14 @@
+# local package install
+-e .
+
+# third party packages
+# dvc
+# dvc[gdrive]
+
+sklearn
+numpy
+pandas
+tox
+flake8
+pytest
+mlflow

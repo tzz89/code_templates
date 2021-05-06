@@ -1,0 +1,16 @@
+{
+    "raw": {
+        "mean": 1,
+        "stddev": 2,
+        "max": 3,
+        "min": 2,
+        "count": 2
+    },
+    "transformed": {
+        "mean": 1,
+        "stddev": 2,
+        "max": 3,
+        "min": 2,
+        "count": 2
+    }
+}

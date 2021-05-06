@@ -1,0 +1,23 @@
+# Unit test / coverage reports
+htmlcov/
+.tox/
+
+# Pycharm
+.idea
+
+# jupyter notebooks will not be merged only #%% will be kept
+.ipynb
+.ipynb_checkpoints/
+
+#data files DVC
+data/*/*
+!data/*/*.dvc
+
+
+#model will be tracked by DVC/MLFLOW
+models/*
+!models/*.dvc
+
+#this are persistence transformers like TFIDF, Normalization etc. Tracked by MLFLOW
+estimators/*
+!estimators/*.dvc
