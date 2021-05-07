@@ -16,3 +16,9 @@ compoenent must have training and predict mode
 -training mode save data
 -predict mode returns data for next stage
 
+######################################
+What are the data to be tracked?
+
+1. assembled_data should be tracked
+    -add assembled_data to remote dvc repo
+2. best_artifact should be tracked

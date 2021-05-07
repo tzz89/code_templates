@@ -13,11 +13,15 @@ htmlcov/
 data/*/*
 !data/*/*.dvc
 
+#artifacts will be tracked by DVC/MLFLOW
+model_artifacts/*
+!model_artifacts/*.dvc
 
-#model will be tracked by DVC/MLFLOW
-models/*
-!models/*.dvc
+#stage artifacts will be tracked by DVC/MLFLOW
+stage_artifacts/*
+!stage_artifacts/*.dvc
 
-#this are persistence transformers like TFIDF, Normalization etc. Tracked by MLFLOW
-estimators/*
-!estimators/*.dvc
+
+#production will be tracked by DVC/MLFLOW
+src/production_artifacts/*
+!src/production_artifacts/*.dvc

@@ -4,6 +4,3 @@ class ProductionModel():
 
     def predict():
         pass
-
-    def fine_tune():
-        pass
