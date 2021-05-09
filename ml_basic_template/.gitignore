@@ -16,12 +16,18 @@ data/*/*
 #artifacts will be tracked by DVC/MLFLOW
 model_artifacts/*
 !model_artifacts/*.dvc
+!model_artifacts/*.gitkeep
 
 #stage artifacts will be tracked by DVC/MLFLOW
 stage_artifacts/*
 !stage_artifacts/*.dvc
+!stage_artifacts/*.gitkeep
 
 
 #production will be tracked by DVC/MLFLOW
 src/production_artifacts/*
 !src/production_artifacts/*.dvc
+!src/production_artifacts/*.gitkeep
+
+#keep all gitkeep
+!*.gitkeep
